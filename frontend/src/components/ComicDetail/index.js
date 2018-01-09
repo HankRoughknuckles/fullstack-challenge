@@ -55,7 +55,7 @@ export class ComicDetail extends Component {
 
   renderDescription() {
     return (
-      <p className='description'>{this.props.comicData.description}</p>
+      <p className='description' dangerouslySetInnerHTML={{__html: this.props.comicData.description}}></p>
     )
   }
 
