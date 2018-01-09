@@ -14,6 +14,10 @@ RSpec.describe Api::ComicsController, type: :controller do
     specify { expect(response.status).to eq 200 }
   end
 
+  describe 'GET /comics/:comic_id' do
+    it 'write some tests when you have more time'
+  end
+
   describe 'PUT /comics/:comic_id/upvote' do
 
     before { put :upvote, params: { comic_id: 123 } }

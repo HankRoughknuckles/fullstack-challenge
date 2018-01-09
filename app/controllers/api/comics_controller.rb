@@ -1,4 +1,6 @@
 require 'digest'
+# TODO: refactor all comic api stuff into one wrapper class
+require 'comic'
 
 class Api::ComicsController < ApplicationController
   include Roar::Rails::ControllerAdditions
@@ -9,6 +11,11 @@ class Api::ComicsController < ApplicationController
     if comics.success?
       respond_with comics.result, :represent_items_with => ComicRepresenter
     end
+  end
+
+  def show
+    @comic = Comic.search(params[:comic_id])
+    respond_with @comic, :represent_with => ComicRepresenter
   end
 
   def upvotes
