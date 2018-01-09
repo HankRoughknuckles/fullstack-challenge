@@ -15,7 +15,7 @@ export class Cover extends Component {
 
     static propTypes = {
       comicData: React.PropTypes.object.isRequired,
-      upVote: React.PropTypes.func.isRequired,
+      handleUpVote: React.PropTypes.func.isRequired,
       upVoted: React.PropTypes.bool.isRequired
     }
 
@@ -57,7 +57,7 @@ export class Cover extends Component {
 
       return (
         <div className="cover-detail" >
-          <div className="cover-heart" onClick={ this.props.upVote.bind(this) }></div>
+          <div className="cover-heart" onClick={ this.props.handleUpVote.bind(this) }></div>
           <div className="cover-footer">
             <div className="cover-title" onClick={ this.openDetailsModal.bind(this) }>
               { this.props.comicData.title }

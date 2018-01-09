@@ -59,7 +59,7 @@ class ComicList extends Component {
       return (
         <Cover
           key={comic.id}
-          upVote={ this.upvote.bind(this, comic.id) }
+          handleUpVote={ this.upvote.bind(this, comic.id) }
           upVoted={ this.checkUpvoted.call(this, comic.id) }
           comicData={ comic }
         />)
